@@ -147,8 +147,18 @@ return true;
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-        return null;
+        List<String> list = new ArrayList<>(Arrays.asList(array));
+        List<String> result = new ArrayList<>();
+        while(!list.isEmpty()){
+            String current = list.remove(0);
+            StringBuilder sb = new StringBuilder(current);
+            while(!list.isEmpty() && list.get(0).equals(current)){
+                sb.append(current);
+                list.remove(0);
+            }
+            result.add(sb.toString());
+        }
+        return result.toArray(new String[0]);
     }
-
 }
 
