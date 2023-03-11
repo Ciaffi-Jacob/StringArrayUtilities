@@ -85,9 +85,6 @@ return array;
                     alphabet[letter - 'a'] = true;
                 }
             }
-
-
-
             }
 for (boolean used : alphabet){
     if (!used){
@@ -103,7 +100,14 @@ return true;
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(value == array[i]){
+                count += 1;
+            }
+
+        }
+        return count;
     }
 
     /**
